@@ -19,7 +19,7 @@ Your answer must be an array in JSON format like so:
  activityName: a,
  locationAddress: b,
  reasonBasedOnWeather: c,
- stimatePriceInEuros: d
+ estimatedPriceInEuros: d
 }]
 '''
 )
