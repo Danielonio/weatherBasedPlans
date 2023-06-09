@@ -4,8 +4,8 @@ from domain.weather_plan_prompt import weatherPromptTemplate
 from datetime import date
 
 class GetWeatherPlan:
-    def call(characterName):
-        weatherInfo = weatherService.getWeatherFromCoordinates()
+    def call(lat, long):
+        weatherInfo = weatherService.getWeatherFromCoordinates(lat, long)
         print(weatherInfo)
         recommendationPrompt = weatherPromptTemplate.substitute(
            todayDate= date.today(),

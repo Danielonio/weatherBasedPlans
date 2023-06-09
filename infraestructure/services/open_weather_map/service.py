@@ -1,11 +1,11 @@
 from .client import OpenWeatherMapClient as client
 
 class OpenWeatherMapService:
-    def getWeatherFromCoordinates():
+    def getWeatherFromCoordinates(lat,long):
         currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather'
         params = {
-            'lat': '44.34',
-            'lon': '10.99',
+            'lat': lat,
+            'lon': long,
         }
         response = client.get(currentWeatherUrl, params)
 

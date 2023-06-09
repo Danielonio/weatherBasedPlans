@@ -6,8 +6,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def search():
     args = request.args
-    if 'name' in args:
-        return GetWeatherPlan.call(args['name'])
-    return ('Name not found')
+    return GetWeatherPlan.call(args['lat'],args['long'])
+
 
 app.run(host='0.0.0.0', port=81)
