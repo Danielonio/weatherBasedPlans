@@ -5,12 +5,13 @@ from datetime import date
 
 class GetWeatherPlan:
     def call(characterName):
-        weatherService.getWeatherFromCoordinates('hh')
+        weatherInfo = weatherService.getWeatherFromCoordinates()
+        print(weatherInfo)
         recommendationPrompt = weatherPromptTemplate.substitute(
            todayDate= date.today(),
-           weatherDescription= 'Super sunny day',
-           coordinates= "'lat': '44.34', 'lon': '10.99'",
-           temperature= '294'
+           weatherDescription= weatherInfo['weatherDescription'],
+           coordinates= weatherInfo['coordinates'],
+           temperature= weatherInfo['temperature'],
         )
         return aiService.getChatGptChatCompletion(recommendationPrompt)
 

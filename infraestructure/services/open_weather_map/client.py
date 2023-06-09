@@ -8,7 +8,6 @@ class OpenWeatherMapClient:
 
   def get(url:str, params:object):
     params['appid']= OpenWeatherMapClient.apiKey
-    print(params)
     postResponse = requests.get(url,  params=params)
     postResponseJson = postResponse.json()
     return postResponseJson
